@@ -1,0 +1,57 @@
+[
+  {
+    "_id": "h6pw900rd",
+    "name": "Joke Usman",
+    "email": "iyiolalawal2@gmail.com",
+    "password": "$2a$10$NR5cVG9Tv6lAOxbKWJ0KDu8eD6tQn30zJzklmzUu0takhMP2JsQcS",
+    "role": "user",
+    "favorites": [],
+    "savedSearches": [],
+    "createdAt": "2026-05-13T15:53:07.582Z",
+    "updatedAt": "2026-05-13T15:53:07.582Z"
+  },
+  {
+    "_id": "4j68x726e",
+    "name": "LegitExchange",
+    "email": "lawalsulaimoniyiola4@gmail.com",
+    "password": "$2a$10$B/pgbFQ3leIAKJz2sQ8SlO9PzTaroq1nMgk4UT9gsYOWogcV.N/Sq",
+    "role": "user",
+    "favorites": [],
+    "savedSearches": [],
+    "createdAt": "2026-05-20T11:27:45.173Z",
+    "updatedAt": "2026-05-20T11:27:45.173Z"
+  },
+  {
+    "_id": "b3dbeff05",
+    "name": "Sotunbo Oluwaseun",
+    "email": "lawalsulaimoniyiola5@gmail.com",
+    "password": "$2a$10$1YiVgtH3qAueHFpAcpZnM.IPmUcMSuQLywzGFVK0GSutUXeMJTSn6",
+    "role": "user",
+    "favorites": [],
+    "savedSearches": [],
+    "createdAt": "2026-05-20T12:09:28.100Z",
+    "updatedAt": "2026-05-20T12:09:28.100Z"
+  },
+  {
+    "_id": "zqaeuz5yd",
+    "name": "Lawal Iyiola",
+    "email": "iyiolalawal25@gmail.com",
+    "password": "$2a$10$WIlR7oUWJaPqtdKbLBEBxeI8N6yoM3VFJ6wDINLD5/YZ7Qs5owGTa",
+    "role": "agent",
+    "favorites": [],
+    "savedSearches": [],
+    "createdAt": "2026-05-20T12:20:38.680Z",
+    "updatedAt": "2026-05-20T12:20:38.680Z"
+  },
+  {
+    "_id": "36brb2j31",
+    "name": "Oreoluwa Asake",
+    "email": "iyiolalawal27@gmail.com",
+    "password": "$2a$10$Vd0i5hzNNoXYq6mJyeeGZ.6r3sS6kbAbpgOTJXm6rjX47GDcaPa2m",
+    "role": "user",
+    "favorites": [],
+    "savedSearches": [],
+    "createdAt": "2026-05-21T12:52:07.651Z",
+    "updatedAt": "2026-05-21T12:52:07.651Z"
+  }
+]
