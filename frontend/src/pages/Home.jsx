@@ -8,10 +8,43 @@ const Home = () => {
 
   return (
     <div>
-      <div className="bg-linear-to-r from-blue-600 to-purple-700 min-h-[85vh] flex items-center justify-center">
-        <div className="text-center text-white px-4">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">Find Your Dream Home</h1>
-          <p className="text-xl md:text-2xl mb-8 drop-shadow-md">Discover amazing properties in your area with our expert guidance.</p>
+      {/* Hero Section with Video Background */}
+      <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Video Background */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="https://videos.pexels.com/video-files/3571812/3571812-sd_640_360_24fps.mp4" type="video/mp4" />
+        </video>
+        
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+
+        {/* Content */}
+        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 drop-shadow-lg animate-fade-in">
+            Find Your Dream Home
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 drop-shadow-md font-light max-w-2xl mx-auto">
+            Discover amazing properties in your area with our expert guidance. Your perfect home awaits.
+          </p>
+          
+          {/* Search Bar */}
+          <div className="mb-8 flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <input
+              type="text"
+              placeholder="Search by location..."
+              className="flex-1 px-6 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-4 focus:ring-blue-400"
+            />
+            <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 transform hover:scale-105">
+              Search
+            </button>
+          </div>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/properties" className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg text-lg transition-all duration-200 transform hover:scale-105 shadow-lg">
               Browse Properties
@@ -19,6 +52,39 @@ const Home = () => {
             <Link to="/contact" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 font-semibold py-3 px-8 rounded-lg text-lg transition-all duration-200">
               Contact Us
             </Link>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+          <div className="animate-bounce">
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      {/* Stats Section */}
+      <div className="bg-gradient-to-r from-blue-600 to-purple-700 py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-white text-center">
+            <div>
+              <div className="text-4xl md:text-5xl font-bold mb-2">500+</div>
+              <p className="text-lg font-light">Properties Listed</p>
+            </div>
+            <div>
+              <div className="text-4xl md:text-5xl font-bold mb-2">10K+</div>
+              <p className="text-lg font-light">Happy Customers</p>
+            </div>
+            <div>
+              <div className="text-4xl md:text-5xl font-bold mb-2">50+</div>
+              <p className="text-lg font-light">Expert Agents</p>
+            </div>
+            <div>
+              <div className="text-4xl md:text-5xl font-bold mb-2">24/7</div>
+              <p className="text-lg font-light">Customer Support</p>
+            </div>
           </div>
         </div>
       </div>
@@ -72,6 +138,125 @@ const Home = () => {
             </div>
             <h3 className="text-2xl font-semibold mb-3 text-gray-800">Easy Contact</h3>
             <p className="text-gray-600 leading-relaxed">Get in touch with us anytime through multiple channels for quick responses and support.</p>
+          </div>
+        </div>
+
+        {/* How It Works Section */}
+        <div className="bg-gray-50 py-16 mt-16">
+          <div className="max-w-6xl mx-auto px-4">
+            <h2 className="text-4xl font-bold text-center mb-4 text-gray-800">How It Works</h2>
+            <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Simple, transparent, and straightforward process to help you find your perfect property.</p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              {[
+                { num: 1, title: 'Search & Browse', desc: 'Explore thousands of properties filtered by your preferences and budget.' },
+                { num: 2, title: 'Schedule Tour', desc: 'Book a virtual or in-person tour with our expert agents at your convenience.' },
+                { num: 3, title: 'Get Finance Help', desc: 'Access our mortgage calculator and connect with financial advisors.' },
+                { num: 4, title: 'Make Offer', desc: 'Negotiate terms and complete your purchase with our secure platform.' }
+              ].map((step) => (
+                <div key={step.num} className="relative">
+                  <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 h-full">
+                    <div className="w-14 h-14 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-4 mx-auto">
+                      {step.num}
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3 text-gray-800 text-center">{step.title}</h3>
+                    <p className="text-gray-600 text-center leading-relaxed">{step.desc}</p>
+                  </div>
+                  {step.num < 4 && (
+                    <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+                      <svg className="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Testimonials Section */}
+        <div className="py-16">
+          <div className="max-w-6xl mx-auto px-4">
+            <h2 className="text-4xl font-bold text-center mb-4 text-gray-800">What Our Clients Say</h2>
+            <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Thousands of satisfied customers have found their dream homes through our platform.</p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                { name: 'Sarah Johnson', role: 'Homebuyer', text: 'The team made my home buying experience seamless and stress-free. Highly recommended!' },
+                { name: 'Michael Chen', role: 'Investor', text: 'Great selection of properties and professional support throughout the entire process.' },
+                { name: 'Emma Davis', role: 'First-time Buyer', text: 'The mortgage calculator and expert guidance helped me make the right decision for my family.' }
+              ].map((testimonial, idx) => (
+                <div key={idx} className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                  <div className="flex items-center mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <p className="text-gray-700 mb-6 leading-relaxed italic">"{testimonial.text}"</p>
+                  <div className="border-t border-gray-200 pt-4">
+                    <p className="font-semibold text-gray-800">{testimonial.name}</p>
+                    <p className="text-sm text-gray-600">{testimonial.role}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Newsletter Section */}
+        <div className="bg-gradient-to-r from-blue-600 to-purple-700 py-16 mt-16">
+          <div className="max-w-6xl mx-auto px-4 text-center">
+            <h2 className="text-4xl font-bold text-white mb-4">Stay Updated</h2>
+            <p className="text-blue-100 mb-8 max-w-2xl mx-auto">Subscribe to our newsletter for new property listings, real estate tips, and market updates.</p>
+            
+            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email..."
+                className="flex-1 px-6 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-4 focus:ring-blue-400"
+              />
+              <button className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-all duration-200 transform hover:scale-105">
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Agents CTA Section */}
+        <div className="py-16">
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-4xl font-bold text-gray-800 mb-6">Are You a Real Estate Agent?</h2>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  Join our network of successful agents and expand your reach to thousands of potential buyers and renters. List your properties, manage inquiries, and grow your business with our modern platform.
+                </p>
+                <ul className="space-y-4 mb-8">
+                  {['Easy property listing', 'Lead management tools', 'Client communication hub', 'Market analytics'].map((feature, idx) => (
+                    <li key={idx} className="flex items-center text-gray-700">
+                      <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 transform hover:scale-105">
+                  Become an Agent
+                </button>
+              </div>
+              <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-xl p-8 min-h-96 flex items-center justify-center">
+                <div className="text-center">
+                  <svg className="w-24 h-24 text-blue-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                  </svg>
+                  <p className="text-gray-700 text-lg font-semibold">Start listing properties today</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
