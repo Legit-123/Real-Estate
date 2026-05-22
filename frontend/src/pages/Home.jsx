@@ -9,23 +9,40 @@ const Home = () => {
   return (
     <div>
       {/* Hero Section with Video Background */}
-      <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-r from-blue-600 to-purple-700">
         {/* Video Background */}
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            zIndex: 1
+          }}
         >
           <source src="https://videos.pexels.com/video-files/3571812/3571812-sd_640_360_24fps.mp4" type="video/mp4" />
+          <source src="https://videos.pexels.com/video-files/3571812/3571812-sd_640_360_25fps.webm" type="video/webm" />
         </video>
         
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          zIndex: 2
+        }}></div>
 
         {/* Content */}
-        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+        <div className="relative text-center text-white px-4 max-w-4xl mx-auto" style={{ zIndex: 3 }}>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 drop-shadow-lg animate-fade-in">
             Find Your Dream Home
           </h1>
@@ -56,7 +73,7 @@ const Home = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2" style={{ zIndex: 3 }}>
           <div className="animate-bounce">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
