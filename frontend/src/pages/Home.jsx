@@ -8,7 +8,7 @@ const Home = () => {
 
   return (
     <div>
-      {/* Hero Section with Video Background */}
+      {/* Hero Section with Real Estate Video Background */}
       <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-r from-blue-600 to-purple-700">
         {/* Video Background */}
         <video
@@ -16,6 +16,7 @@ const Home = () => {
           muted
           loop
           playsInline
+          poster="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80"
           style={{
             position: 'absolute',
             top: 0,
@@ -23,11 +24,12 @@ const Home = () => {
             width: '100%',
             height: '100%',
             objectFit: 'cover',
+            opacity: 0.85,
             zIndex: 1
           }}
         >
-          <source src="https://videos.pexels.com/video-files/3571812/3571812-sd_640_360_24fps.mp4" type="video/mp4" />
-          <source src="https://videos.pexels.com/video-files/3571812/3571812-sd_640_360_25fps.webm" type="video/webm" />
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-real-estate-agent-showing-a-property-40773-large.mp4" type="video/mp4" />
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-real-estate-agent-showing-a-property-40773-large.webm" type="video/webm" />
         </video>
         
         {/* Overlay */}
@@ -37,37 +39,37 @@ const Home = () => {
           left: 0,
           width: '100%',
           height: '100%',
-          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          backgroundColor: 'rgba(0, 0, 0, 0.55)',
           zIndex: 2
         }}></div>
 
         {/* Content */}
         <div className="relative text-center text-white px-4 max-w-4xl mx-auto" style={{ zIndex: 3 }}>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 drop-shadow-lg animate-fade-in">
-            Find Your Dream Home
+            Dream homes, trusted agents, fast closings.
           </h1>
           <p className="text-xl md:text-2xl mb-8 drop-shadow-md font-light max-w-2xl mx-auto">
-            Discover amazing properties in your area with our expert guidance. Your perfect home awaits.
+            Connect with local real estate experts, explore verified listings, and move forward with confidence.
           </p>
           
           {/* Search Bar */}
           <div className="mb-8 flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
             <input
               type="text"
-              placeholder="Search by location..."
+              placeholder="Search homes, agents, or neighborhoods"
               className="flex-1 px-6 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-4 focus:ring-blue-400"
             />
             <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 transform hover:scale-105">
-              Search
+              Find Listings
             </button>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/properties" className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg text-lg transition-all duration-200 transform hover:scale-105 shadow-lg">
-              Browse Properties
+              Browse Homes
             </Link>
             <Link to="/contact" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 font-semibold py-3 px-8 rounded-lg text-lg transition-all duration-200">
-              Contact Us
+              Talk to an Agent
             </Link>
           </div>
         </div>
@@ -88,19 +90,19 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-white text-center">
             <div>
               <div className="text-4xl md:text-5xl font-bold mb-2">500+</div>
-              <p className="text-lg font-light">Properties Listed</p>
+              <p className="text-lg font-light">Verified Listings</p>
             </div>
             <div>
               <div className="text-4xl md:text-5xl font-bold mb-2">10K+</div>
-              <p className="text-lg font-light">Happy Customers</p>
+              <p className="text-lg font-light">Buyers & Renters Helped</p>
             </div>
             <div>
               <div className="text-4xl md:text-5xl font-bold mb-2">50+</div>
-              <p className="text-lg font-light">Expert Agents</p>
+              <p className="text-lg font-light">Local Agents</p>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-bold mb-2">24/7</div>
-              <p className="text-lg font-light">Customer Support</p>
+              <div className="text-4xl md:text-5xl font-bold mb-2">95%</div>
+              <p className="text-lg font-light">Success Rate</p>
             </div>
           </div>
         </div>
@@ -166,10 +168,10 @@ const Home = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {[
-                { num: 1, title: 'Search & Browse', desc: 'Explore thousands of properties filtered by your preferences and budget.' },
-                { num: 2, title: 'Schedule Tour', desc: 'Book a virtual or in-person tour with our expert agents at your convenience.' },
-                { num: 3, title: 'Get Finance Help', desc: 'Access our mortgage calculator and connect with financial advisors.' },
-                { num: 4, title: 'Make Offer', desc: 'Negotiate terms and complete your purchase with our secure platform.' }
+                { num: 1, title: 'Find Properties', desc: 'Search verified homes, apartments, and investment listings across top neighborhoods.' },
+                { num: 2, title: 'Connect with Agents', desc: 'Get matched with local real estate experts who know the market and your needs.' },
+                { num: 3, title: 'Tour with Confidence', desc: 'Book viewings, compare homes, and get virtual tours from anywhere.' },
+                { num: 4, title: 'Close the Deal', desc: 'Make offers and move forward with trusted support for buyers and sellers.' }
               ].map((step) => (
                 <div key={step.num} className="relative">
                   <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 h-full">
@@ -200,9 +202,9 @@ const Home = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-                { name: 'Sarah Johnson', role: 'Homebuyer', text: 'The team made my home buying experience seamless and stress-free. Highly recommended!' },
-                { name: 'Michael Chen', role: 'Investor', text: 'Great selection of properties and professional support throughout the entire process.' },
-                { name: 'Emma Davis', role: 'First-time Buyer', text: 'The mortgage calculator and expert guidance helped me make the right decision for my family.' }
+                { name: 'Sarah Johnson', role: 'Homebuyer', text: 'This platform helped me find my first home in the perfect neighborhood with an agent who understood my priorities.' },
+                { name: 'Michael Chen', role: 'Investor', text: 'I found multiple rental prospects quickly and closed on the best deal with clear agent guidance.' },
+                { name: 'Emma Davis', role: 'First-time Buyer', text: 'The property tours and financing insights made the buying process feel easy and transparent.' }
               ].map((testimonial, idx) => (
                 <div key={idx} className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
                   <div className="flex items-center mb-4">
@@ -247,12 +249,12 @@ const Home = () => {
           <div className="max-w-6xl mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-4xl font-bold text-gray-800 mb-6">Are You a Real Estate Agent?</h2>
+                <h2 className="text-4xl font-bold text-gray-800 mb-6">Sell faster with our agent network</h2>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Join our network of successful agents and expand your reach to thousands of potential buyers and renters. List your properties, manage inquiries, and grow your business with our modern platform.
+                  Connect with motivated buyers and renters through our marketplace, get instant leads, and manage property showings with ease.
                 </p>
                 <ul className="space-y-4 mb-8">
-                  {['Easy property listing', 'Lead management tools', 'Client communication hub', 'Market analytics'].map((feature, idx) => (
+                  {['Showcase listings to motivated buyers', 'Instant lead notifications', 'Smart property matching', 'Tools for fast closings'].map((feature, idx) => (
                     <li key={idx} className="flex items-center text-gray-700">
                       <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -262,7 +264,7 @@ const Home = () => {
                   ))}
                 </ul>
                 <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 transform hover:scale-105">
-                  Become an Agent
+                  Join Our Network
                 </button>
               </div>
               <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-xl p-8 min-h-96 flex items-center justify-center">
@@ -270,7 +272,7 @@ const Home = () => {
                   <svg className="w-24 h-24 text-blue-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                   </svg>
-                  <p className="text-gray-700 text-lg font-semibold">Start listing properties today</p>
+                  <p className="text-gray-700 text-lg font-semibold">Showcase properties to ready buyers</p>
                 </div>
               </div>
             </div>
